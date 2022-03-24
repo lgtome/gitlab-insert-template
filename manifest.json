@@ -1,0 +1,27 @@
+{
+    "name": "Gitlab insert template",
+    "description": "Insert template on the gitlab MR",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "./bundle/background.js"
+    },
+    "permissions": ["storage"],
+    "content_scripts": [
+        {
+            "matches": ["https://*/*"],
+            "js": ["./bundle/contentscript.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["./bundle/inject.js"],
+            "matches": ["https://*/*"]
+        }
+    ],
+    "action": {
+        "default_popup": "./bundle/main.html"
+    },
+    "icons": { "16": "all.png", "48": "all.png", "128": "all.png" }
+}
