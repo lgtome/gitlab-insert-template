@@ -23,5 +23,9 @@
     "action": {
         "default_popup": "./bundle/main.html"
     },
-    "icons": { "16": "all.png", "48": "all.png", "128": "all.png" }
+    "icons": {
+        "16": "./assets/all.png",
+        "48": "./assets/all.png",
+        "128": "./assets/all.png"
+    }
 }
