@@ -2,7 +2,7 @@
 
 ## Usage
 
-Insert your custom _template_ to textarea and use ine if this options:
+Insert your custom _template_ to textarea and use one if this options:
 
 -   **auto** if you want to insert your custom _template_ when your open MR
 -   **insert** if you want manually control when you want to insert _template_
