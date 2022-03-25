@@ -1,11 +1,10 @@
 # Gitlab insert template
 
 ## Usage
+Insert your custom **template** to textarea in the extension popup.
+####
+Use the new insert button on the Gitlab MR UI.
 
-Insert your custom _template_ to textarea and use one if this options:
-
--   **auto** if you want to insert your custom _template_ when your open MR
--   **insert** if you want manually control when you want to insert _template_
 
 ## How to install
 
