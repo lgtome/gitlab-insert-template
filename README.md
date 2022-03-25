@@ -4,6 +4,8 @@
 Insert your custom **template** to textarea in the extension popup.
 ####
 Use the new insert button on the Gitlab MR UI.
+####
+<img width="134" alt="image" src="https://user-images.githubusercontent.com/73399949/160213902-7c321042-40af-4bf2-b75d-2b8ef1d3362a.png">
 
 
 ## How to install
