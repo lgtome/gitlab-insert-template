@@ -2,7 +2,6 @@ const nullthrows = (v) => {
     if (v == null) throw new Error("it's a null")
     return v
 }
-
 function injectCode(src) {
     const script = document.createElement('script')
     // This is why it works!
@@ -15,12 +14,30 @@ function injectCode(src) {
     // so we add the script to <html> instead.
     nullthrows(document.head || document.documentElement).appendChild(script)
 }
-
 injectCode(chrome.runtime.getURL('/myscript.js'))
+
+function mountButton(isMountNeeded){
+    if(isMountNeeded){
+        const templateInsertButton = document.createElement('div')
+        templateInsertButton.innerHTML = '&#9998; insert template'
+        templateInsertButton.style.float = 'right'
+        templateInsertButton.style.padding = '0 10px'
+        templateInsertButton.style.cursor = 'pointer'
+        templateInsertButton.style.color = '#1f75cb'
+        document.querySelector('.uploading-container').after(templateInsertButton)
+        return templateInsertButton
+    }
+    return false
+}
+
 function getTextArea() {
     const form = document.querySelector('.merge-request-form')
     if (form) {
         const textArea = form.querySelector('.note-textarea')
+        const button = mountButton(!!textArea)
+        if(button) button.onclick =() => {
+            insertTemplate(textArea)
+        }
         return textArea
     } else {
         return false
@@ -56,23 +73,13 @@ function insertTemplate(node) {
         resizeByRows(node)
     })
 }
-function insertWhenAuto(node) {
-    chrome.storage.local.get('auto', ({ auto }) => {
-        if (auto) {
-            !node.value && insertTemplate(node)
-        }
-    })
-}
 function subscribe(node) {
     syncWithLocalStorage()
-    insertWhenAuto(node)
+
     chrome.storage.local.set({ click: false })
     chrome.storage.onChanged.addListener(function ({ click, auto }) {
         if (click?.newValue || click?.oldValue) {
             insertTemplate(node)
-        }
-        if (auto?.newValue || auto?.oldValue) {
-            insertWhenAuto(node)
         }
     })
 }
