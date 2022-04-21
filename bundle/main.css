@@ -1,19 +1,9 @@
 body {
   width: 500px;
   height: 40vh;
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /*flex-direction: column;*/
   min-height: 100vh;
   background: #dddcdc;
-  /* padding: 20px 0; */
-  /*gap: 40px;*/
-  /*margin: 10px 0;*/
 }
-
-
-
 
 .wrap {
   width: 100%;
