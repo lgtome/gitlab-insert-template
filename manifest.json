@@ -18,6 +18,10 @@
         {
             "resources": ["./bundle/inject.js"],
             "matches": ["https://gitlab.com/*"]
+        },
+        {
+            "resources": ["./bundle/main.js"],
+            "matches": ["https://gitlab.com/*"]
         }
     ],
     "action": {
@@ -27,5 +31,23 @@
         "16": "./assets/all.png",
         "48": "./assets/all.png",
         "128": "./assets/all.png"
+    },
+
+    "commands": {
+        "reload": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+E",
+                "mac": "Command+Shift+E"
+            },
+            "description": "Reload extension"
+        },
+        "_execute_action": {
+            "suggested_key": {
+                "windows": "Ctrl+Shift+E",
+                "mac": "Command+Shift+E",
+                "chromeos": "Ctrl+Shift+U",
+                "linux": "Ctrl+Shift+J"
+            }
+        }
     }
 }

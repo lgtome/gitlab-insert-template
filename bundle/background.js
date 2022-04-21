@@ -1,3 +1,5 @@
-// chrome.browserAction.onClicked.addListener((tab) => {
-//     chrome.tabs.executeScript(tab.id, { file: 'contentscript.js' })
-// })
+chrome.commands.onCommand.addListener((command) => {
+    if (command === 'reload') {
+        chrome.runtime.reload()
+    }
+})
